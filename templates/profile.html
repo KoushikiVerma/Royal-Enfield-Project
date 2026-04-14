@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Profile</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/profile.css') }}">
+</head>
+
+<body>
+<a href="javascript:history.back()" class="back-btn">← Back</a>
+<h1 class="title">My Profile</h1>
+
+<div class="profile-box">
+
+    <h2>{{ user['first_name'] }} {{ user['last_name'] }}</h2>
+
+    <p><b>Email:</b> {{ user['email'] }}</p>
+    <p><b>Contact:</b> {{ user['contact'] }}</p>
+
+    <a href="/logout" class="btn">Logout</a>
+
+</div>
+
+</body>
+</html>

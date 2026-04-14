@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Manage Contact</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/manage.css') }}">
+</head>
+
+<body>
+<a href="javascript:history.back()" class="back-btn">← Back</a>
+<h1 class="title">Contact Messages</h1>
+
+<div class="table-container">
+
+    <table>
+
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Message</th>
+            <th>Action</th>
+        </tr>
+
+        {% for c in contacts %}
+        <tr>
+            <td>{{ c['id'] }}</td>
+            <td>{{ c['name'] }}</td>
+            <td>{{ c['email'] }}</td>
+            <td>{{ c['message'] }}</td>
+            <td>
+                <a href="/delete_contact/{{ c['id'] }}" class="action-btn">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+
+    </table>
+
+</div>
+
+</body>
+</html>

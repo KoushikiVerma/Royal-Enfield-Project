@@ -1,0 +1,91 @@
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* TITLE */
+.title {
+    text-align: center;
+    margin: 40px 0;
+    font-size: 40px;
+}
+
+/* LIST */
+.bike-list {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding: 20px 60px;
+}
+
+/* CARD */
+.bike-box {
+    display: flex;
+    gap: 30px;
+    background: #111;
+    padding: 25px;
+    border-radius: 15px;
+    align-items: center;
+    transition: 0.3s;
+}
+
+.bike-box:hover {
+    transform: scale(1.02);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+}
+
+/* IMAGE */
+.bike-box img {
+    width: 250px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* TEXT */
+.bike-box h2 {
+    margin-bottom: 10px;
+}
+
+.desc {
+    margin: 10px 0;
+    color: #ccc;
+}
+
+/* FEATURES */
+.features p {
+    margin: 5px 0;
+}
+
+/* BUTTON */
+.book-btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background: #5a3e2b;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+}
+
+.book-btn:hover {
+    background: #7a5a42;
+}
+
+/* BACK BUTTON */
+.back-btn {
+    display: inline-block;
+    margin: 20px;
+    padding: 8px 15px;
+    background: rgb(239, 241, 195);
+    color:#5a3e2b;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 14px;
+       position: fixed;
+    top: 20px;
+    left: 20px;
+}
+
+.back-btn:hover {
+    background: #c1926e;
+}

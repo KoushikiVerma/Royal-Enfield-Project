@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Payment</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/payment.css') }}">
+</head>
+
+<body>
+<a href="javascript:history.back()" class="back-btn">← Back</a>
+<h1 class="title">Complete Payment</h1>
+
+<div class="payment-box">
+
+    <h2>{{ bike['name'] }}</h2>
+
+    <p><b>Price:</b> ₹{{ bike['price'] }}</p>
+    {% if plan %}
+<p><b>EMI Plan:</b> {{ plan }} Months</p>
+<p><b>Monthly:</b> ₹{{ (bike['price']|int) // (plan|int) }}</p>
+{% endif %}
+
+    <form method="POST">
+
+        <input type="text" placeholder="Card Number" required>
+        <input type="text" placeholder="Card Holder Name" required>
+        <input type="text" placeholder="Expiry Date" required>
+        <input type="text" placeholder="CVV" required>
+
+        <button type="submit">Pay Now</button>
+
+    </form>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Manage EMI</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/manage.css') }}">
+</head>
+
+<body>
+
+<a href="javascript:history.back()" class="back-btn">← Back</a>
+
+<h1 class="title">Manage EMI Plans</h1>
+
+<!-- ADD EMI -->
+<div class="form-container">
+
+<form method="POST">
+
+    <select name="bike_id" required>
+        <option value="">Select Bike</option>
+        {% for bike in bikes %}
+            <option value="{{ bike['id'] }}">
+                {{ bike['name'] }} (₹{{ bike['price'] }})
+            </option>
+        {% endfor %}
+    </select>
+
+    <input type="number" name="months" placeholder="Months (3,6,12)" required>
+
+    <button type="submit">Generate EMI</button>
+
+</form>
+
+</div>
+
+<!-- EMI TABLE -->
+<div class="table-container">
+
+    <table>
+
+        <tr>
+            <th>Bike</th>
+            <th>Months</th>
+            <th>Amount</th>
+            <th>Action</th>
+        </tr>
+
+        {% for e in emis %}
+        <tr>
+            <td>{{ e['name'] }}</td>
+            <td>{{ e['months'] }}</td>
+            <td>{{ e['amount'] }}</td>
+            <td>
+                <a href="/delete_emi/{{ e['id'] }}" class="action-btn">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+
+    </table>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Book Bike</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bookbike.css') }}">
+    
+</head>
+
+<body>
+
+<a href="javascript:history.back()" class="back-btn">← Back</a>
+
+<div class="book-container">
+    <div class="book-box">
+
+        <h2>{{ bike['name'] }}</h2>
+
+        <img src="{{ url_for('static', filename='images/' + bike['image']) }}">
+
+        <p><b>Price:</b> ₹{{ bike['price'] }}</p>
+
+        <form method="POST">
+
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="text" name="contact" placeholder="Contact Number" required>
+            <input type="text" name="address" placeholder="Address" required>
+
+            <!-- PLAN -->
+            <div class="plan-section">
+                <label><b>Select Option:</b></label><br><br>
+
+                <div class="radio-group">
+
+    <label class="radio-option">
+        <input type="radio" name="plan" value="Full Payment" onclick="hideEMI()" required>
+        <span>Full Payment</span>
+    </label>
+
+    <label class="radio-option">
+        <input type="radio" name="plan" value="EMI" onclick="showEMI()">
+        <span>EMI</span>
+    </label>
+
+</div>
+            </div>
+
+            <!-- EMI OPTIONS -->
+            <div id="emi_options" style="display:none;">
+                <label><b>Select EMI Plan:</b></label><br><br>
+
+               {% for e in emis %}
+<label class="radio-option">
+    <input type="radio" name="months" value="{{ e.months }}">
+    <span>{{ e.months }} months - ₹{{ e.amount }}/month</span>
+</label>
+{% endfor %}
+            </div>
+
+            <br>
+            <button type="submit">Book Now</button>
+
+        </form>
+
+    </div>
+</div>
+
+<script>
+function showEMI() {
+    document.getElementById("emi_options").style.display = "block";
+}
+
+function hideEMI() {
+    document.getElementById("emi_options").style.display = "none";
+}
+</script>
+
+</body>
+</html>

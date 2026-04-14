@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Book Service</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/form.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<a href="javascript:history.back()" class="back-btn">← Back</a>
+
+<div class="form-page">
+
+    <!-- LEFT SIDE -->
+    <div class="form-left">
+
+        <h1>Book Your Service</h1>
+
+        <p>
+            Schedule your service with ease. Our experts ensure your bike gets the best care.
+        </p>
+
+        <div class="contact-info">
+            <p>✔ Certified Mechanics</p>
+            <p>✔ Genuine Spare Parts</p>
+            <p>✔ Fast & Reliable Service</p>
+        </div>
+
+    </div>
+
+    <!-- RIGHT SIDE -->
+    <div class="form-right">
+
+        <form method="POST">
+
+            <input type="text" name="name" placeholder="Your Name" required>
+
+            <input type="text" name="contact" placeholder="Contact Number" required>
+
+            <input type="text" name="address" placeholder="Address" required>
+
+            <input type="date" name="date" required>
+
+            <button type="submit">Confirm Booking</button>
+
+        </form>
+
+    </div>
+
+</div>
+
+</body>
+</html>

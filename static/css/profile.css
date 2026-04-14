@@ -1,0 +1,54 @@
+.title {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.profile-box {
+    width: 400px;
+    margin: auto;
+    padding: 30px;
+    background: #111;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.profile-box h2 {
+    margin-bottom: 15px;
+}
+
+.profile-box p {
+    margin: 10px 0;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background: #5a3e2b;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+}
+
+.btn:hover {
+    background: #7a5a42;
+}
+
+/* BACK BUTTON */
+.back-btn {
+    display: inline-block;
+    margin: 20px;
+    padding: 8px 15px;
+    background: rgb(239, 241, 195);
+    color:#5a3e2b;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 14px;
+       position: fixed;
+    top: 20px;
+    left: 20px;
+}
+
+.back-btn:hover {
+    background: #c1926e;
+}

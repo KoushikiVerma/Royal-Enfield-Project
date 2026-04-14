@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bikes</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bikes.css') }}">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body><h1 class="title">Our Motorcycles</h1>
+<a href="javascript:history.back()" class="back-btn">← Back</a>
+<div class="bike-list">
+
+    {% for bike in bikes %}
+    <div class="bike-box">
+
+        <h2>{{ bike['name'] }}</h2>
+
+        <img src="{{ url_for('static', filename='images/' + bike['image']) }}">
+
+        <p class="desc">{{ bike['description'] }}</p>
+
+        <div class="features">
+            <p><b>Engine:</b> {{ bike['engine'] }}</p>
+            <p><b>Mileage:</b> {{ bike['mileage'] }}</p>
+            <p><b>Price:</b> ₹{{ bike['price'] }}</p>
+        </div>
+
+       <a href="/book/{{ bike['id'] }}" class="book-btn">Book Now</a>
+
+    </div>
+    {% endfor %}
+
+</div></body>
+</html>

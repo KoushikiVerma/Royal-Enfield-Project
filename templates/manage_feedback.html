@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Manage Feedback</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/manage.css') }}">
+</head>
+
+<body>
+<a href="javascript:history.back()" class="back-btn">← Back</a>
+<h1 class="title">User Feedback</h1>
+
+<div class="table-container">
+
+    <table>
+
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Feedback</th>
+            <th>Action</th>
+        </tr>
+
+        {% for f in feedbacks %}
+        <tr>
+            <td>{{ f['id'] }}</td>
+            <td>{{ f['name'] }}</td>
+            <td>{{ f['email'] }}</td>
+            <td>{{ f['message'] }}</td>
+            <td>
+                <a href="/delete_feedback/{{ f['id'] }}" class="action-btn">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+
+    </table>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>View Bookings</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/manage.css') }}">
+</head>
+
+<body>
+
+<a href="javascript:history.back()" class="back-btn">← Back</a>
+
+<!-- 🔵 SERVICE BOOKINGS -->
+<h1 class="title">Service Bookings</h1>
+
+<div class="table-container">
+<table>
+<tr>
+    <th>ID</th>
+    <th>User Name</th>
+    <th>Service</th>
+    <th>Contact</th>
+    <th>Address</th>
+    <th>Date</th>
+</tr>
+
+{% for b in service_bookings %}
+<tr>
+    <td>{{ b['id'] }}</td>
+    <td>{{ b['user_name'] }}</td>
+    <td>{{ b['service_name'] }}</td>
+    <td>{{ b['contact'] }}</td>
+    <td>{{ b['address'] }}</td>
+    <td>{{ b['date'] }}</td>
+</tr>
+{% endfor %}
+
+</table>
+</div>
+
+
+<!-- 🔴 BIKE BOOKINGS -->
+<h1 class="title">Bike Bookings</h1>
+
+<div class="table-container">
+<table>
+<tr>
+    <th>ID</th>
+    <th>User Name</th>
+    <th>Bike</th>
+    <th>Contact</th>
+    <th>Address</th>
+    <th>Plan</th>
+    <th>Date</th>
+</tr>
+
+{% for b in bike_bookings %}
+<tr>
+    <td>{{ b['id'] }}</td>
+    <td>{{ b['user_name'] }}</td>
+    <td>{{ b['bike_name'] }}</td>
+    <td>{{ b['contact'] }}</td>
+    <td>{{ b['address'] }}</td>
+    <td>{{ b['payment_type'] }}</td>
+    <td>{{ b['date'] }}</td>
+</tr>
+{% endfor %}
+
+</table>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Royal Enfield</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<header>
+    <div class="logo">ROYAL ENFIELD</div>
+
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="#bikes">Bikes</a></li>
+            <li><a href="#services">Services</a></li>
+
+            <li class="dropdown">
+                <a href="#">Login</a>
+                <div class="dropdown-content">
+                    <a href="/userlogin">User Login</a>
+                    <a href="/adminlogin">Admin Login</a>
+                </div>
+            </li>
+
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="/signup">Signup</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+    <div>
+        <h1 class="re-title">Royal <br><span>Enfield</span></h1>
+
+        <h3 class="re-subtitle">Legendary Thump. Pure Character.</h3>
+
+        <p class="re-desc">Experience the soul of a true icon.</p>
+
+        <div class="icon-container">
+            <img src="{{ url_for('static', filename='images/icon.jpeg') }}" class="re-icon">
+        </div>
+    </div>
+</div>
+
+<!-- ABOUT -->
+<section>
+    <h2>About Royal Enfield</h2>
+    <p>Royal Enfield is known for powerful bikes and timeless design.</p>
+    <a href="/about" class="btn-explore">Explore Royal Enfield</a>
+</section>
+
+<!-- BIKES -->
+<section id="bikes">
+    <h2>Our Bikes</h2>
+
+    <div class="bike-container">
+
+        <div class="bike-card">
+            <img src="{{ url_for('static', filename='images/hunter350.png') }}">
+            <h3>Hunter 350</h3>
+        </div>
+
+        <div class="bike-card">
+            <img src="{{ url_for('static', filename='images/goanclassic350.png') }}">
+            <h3>Goan Classic 350</h3>
+        </div>
+
+        <div class="bike-card">
+            <img src="{{ url_for('static', filename='images/classic350.png') }}">
+            <h3>Classic 350</h3>
+        </div>
+
+        <div class="bike-card">
+            <img src="{{ url_for('static', filename='images/bullet350.png') }}">
+            <h3>Bullet 350</h3>
+        </div>
+
+        <div class="bike-card">
+            <img src="{{ url_for('static', filename='images/meteor350.png') }}">
+            <h3>Meteor 350</h3>
+        </div>
+
+        <div class="bike-card">
+            <img src="{{ url_for('static', filename='images/scram440.png') }}">
+            <h3>Scram 440</h3>
+        </div>
+
+        <div class="bike-card">
+            <img src="{{ url_for('static', filename='images/guerrilla450.png') }}">
+            <h3>Guerrilla 450</h3>
+        </div>
+
+        <div class="bike-card">
+            <img src="{{ url_for('static', filename='images/himalayan450.png') }}">
+            <h3>Himalayan 450</h3>
+        </div>
+
+        <div class="bike-card">
+            <img src="{{ url_for('static', filename='images/bear650.png') }}">
+            <h3>Bear 650</h3>
+        </div>
+
+        <div class="bike-card">
+            <img src="{{ url_for('static', filename='images/shotgun650.png') }}">
+            <h3>Shotgun 650</h3>
+        </div>
+
+        <div class="bike-card">
+            <img src="{{ url_for('static', filename='images/classic650.png') }}">
+            <h3>Classic 650</h3>
+        </div>
+
+        <div class="bike-card">
+            <img src="{{ url_for('static', filename='images/bullet650.png') }}">
+            <h3>Bullet 650</h3>
+        </div>
+
+        <div class="bike-card">
+            <img src="{{ url_for('static', filename='images/supermeteor650.png') }}">
+            <h3>Super Meteor 650</h3>
+        </div>
+
+        <div class="bike-card">
+            <img src="{{ url_for('static', filename='images/interceptor650.png') }}">
+            <h3>Interceptor 650</h3>
+        </div>
+
+        <div class="bike-card">
+            <img src="{{ url_for('static', filename='images/continental650.png') }}">
+            <h3>Continental GT 650</h3>
+        </div>
+
+
+        
+
+
+    </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+    <h2>Our Services</h2>
+
+    <div class="services-container"> 
+        <div class="service-card">Engine Repair</div>
+        <div class="service-card">Bike Customization</div>
+        <div class="service-card">Oil Change</div>
+        <div class="service-card">Brake & Clutch Repair</div>
+        <div class="service-card">Battery Check</div>
+        <div class="service-card">Tyre Replacement</div>
+       
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+    <h2>Get in Touch</h2>
+
+    <div class="contact-circle-container">
+        <a href="/contact" class="contact-circle">Contact</a>
+        <a href="/feedback" class="contact-circle">Feedback</a>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <p>© 2026 Royal Enfield</p>
+</footer>
+
+</body>
+</html>

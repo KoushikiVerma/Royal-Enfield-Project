@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Manage Services</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/manage.css') }}">
+</head>
+
+<body>
+
+<a href="javascript:history.back()" class="back-btn">← Back</a>
+<h1 class="title">Manage Services</h1>
+
+<!-- ADD SERVICE -->
+<div class="form-container">
+
+    <form method="POST">
+
+        <input type="text" name="name" placeholder="Service Name" required>
+
+        <input type="text" name="image" placeholder="Image Name (e.g. service.jpg)" required>
+
+        <textarea name="description" placeholder="Description"></textarea>
+
+        <input type="text" name="price" placeholder="Price">
+
+        <button type="submit">Add Service</button>
+
+    </form>
+
+</div>
+
+<!-- SERVICE TABLE -->
+<div class="table-container">
+
+    <table>
+
+        <tr>
+            <th>Name</th>
+            <th>Image</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>Action</th>
+        </tr>
+
+        {% for service in services %}
+        <tr>
+            <td>{{ service['name'] }}</td>
+            <td>{{ service['image'] }}</td>
+            <td>{{ service['description'] }}</td>
+            <td>{{ service['price'] }}</td>
+            <td>
+                <a href="/delete_service/{{ service['id'] }}" class="action-btn">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+
+    </table>
+
+</div>
+
+</body>
+</html>

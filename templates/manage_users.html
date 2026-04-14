@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Manage Users</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/manage.css') }}">
+</head>
+
+<body>
+
+<a href="javascript:history.back()" class="back-btn">← Back</a>
+<h1 class="title">Manage Users</h1>
+
+<div class="table-container">
+
+    <table>
+
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Contact</th>
+            <th>Action</th>
+        </tr>
+
+        {% for user in users %}
+        <tr>
+            <td>{{ user['id'] }}</td>
+            <td>{{ user['first_name'] }} {{ user['last_name'] }}</td>
+            <td>{{ user['email'] }}</td>
+            <td>{{ user['contact'] }}</td>
+            <td>
+                <a href="/delete_user/{{ user['id'] }}" class="action-btn">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+
+    </table>
+
+</div>
+
+</body>
+</html>

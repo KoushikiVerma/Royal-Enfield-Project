@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Manage Bikes</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/manage.css') }}">
+</head>
+
+<body>
+
+<a href="javascript:history.back()" class="back-btn">← Back</a>
+<h1 class="title">Manage Bikes</h1>
+
+<!-- ADD BIKE FORM -->
+<div class="form-container">
+
+    <form method="POST">
+
+        <input type="text" name="name" placeholder="Bike Name" required>
+        <input type="text" name="image" placeholder="Image Name (e.g. bike2.jpg)" required>
+        <textarea name="description" placeholder="Description"></textarea>
+
+        <input type="text" name="engine" placeholder="Engine">
+        <input type="text" name="mileage" placeholder="Mileage">
+        <input type="text" name="price" placeholder="Price">
+
+        <button type="submit">Add Bike</button>
+
+    </form>
+
+</div>
+
+<!-- BIKE LIST -->
+<div class="table-container">
+
+    <table>
+
+        <tr>
+            <th>Name</th>
+            <th>Image</th>
+            <th>Engine</th>
+            <th>Mileage</th>
+            <th>Price</th>
+            <th>Action</th>
+        </tr>
+
+        {% for bike in bikes %}
+        <tr>
+            <td>{{ bike['name'] }}</td>
+            <td>{{ bike['image'] }}</td>
+            <td>{{ bike['engine'] }}</td>
+            <td>{{ bike['mileage'] }}</td>
+            <td>{{ bike['price'] }}</td>
+            <td>
+                <a href="/delete_bike/{{ bike['id'] }}" class="action-btn">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+
+    </table>
+
+</div>
+
+</body>
+</html>

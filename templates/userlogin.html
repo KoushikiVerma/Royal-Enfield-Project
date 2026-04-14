@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Login</title>
+
+    <!-- MAIN CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+    <!-- FORM CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/form.css') }}">
+
+    <!-- GOOGLE FONT -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+<a href="javascript:history.back()" class="back-btn">← Back</a>
+<div class="auth-container">
+    <div class="auth-box">
+
+        <h2>User Login</h2>
+
+        <form method="POST">
+
+            <div class="input-group">
+                <input type="email" name="email" placeholder="Email" required>
+            </div>
+
+            <div class="input-group">
+                <input type="password" name="password" placeholder="Password" required>
+            </div>
+
+            <button type="submit" class="auth-btn">Login</button>
+
+        </form>
+
+        <div class="auth-footer">
+            Don't have an account? <a href="/signup">Signup</a>
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>
